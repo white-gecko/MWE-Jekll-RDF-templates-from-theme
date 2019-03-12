@@ -1,0 +1,12 @@
+# Site settings
+baseurl: ""
+url: "http://example.org/"
+
+# Build settings
+theme: jekyll-theme-jod
+plugins:
+  - jekyll-rdf
+jekyll_rdf:
+    path: "graph.ttl"
+    restriction: "SELECT ?resourceUri WHERE { ?resourceUri ?p ?o . FILTER (regex(str(?resourceUri), \"http://example.org/\")) }"
+    default_template: ontology
